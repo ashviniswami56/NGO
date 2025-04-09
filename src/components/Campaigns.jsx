@@ -2,14 +2,14 @@
 import Image from "next/image";
 
 const campaigns = [
-  { src: "/skills.jpeg", label: "Skills Training", bg: "bg-cyan-500" },
-  { src: "/street-children.jpg", label: "Street Children", bg: "bg-rose-400" },
-  { src: "/women.jpg", label: "Women Empowerment", bg: "bg-orange-400" },
-  { src: "/tree-plantation.jpg", label: "Donate at Environment / Tree Plantation", bg: "bg-pink-600 text-white" },
-  { src: "/rural.jpg", label: "Rural Development", bg: "bg-amber-300" },
-  { src: "/elder.jpg", label: "Elderly Care", bg: "bg-purple-400" },
-  { src: "/health.jpg", label: "Health Programs", bg: "bg-indigo-500 text-white" },
-  { src: "/covid.jpg", label: "COVID Relief", bg: "bg-teal-600 text-white" },
+  { src: "/skills.jpeg", label: "Skills Training", bg: "bg-teal-500 text-black" },
+  { src: "/street-children.jpg", label: "Street Children", bg: "bg-teal-400 text-black" },
+  { src: "/women.jpg", label: "Women Empowerment", bg: "bg-teal-400 text-black" },
+  { src: "/tree-plantation.jpg", label: "Donate at Environment / Tree Plantation", bg: "bg-teal-600 text-black" },
+  { src: "/rural.jpg", label: "Rural Development", bg: "bg-teal-300 text-black" },
+  { src: "/elder.jpg", label: "Elderly Care", bg: "bg-teal-400 text-black" },
+  { src: "/health.jpg", label: "Health Programs", bg: "bg-teal-500 text-black" },
+  { src: "/covid.jpg", label: "COVID Relief", bg: "bg-teal-600 text-black" },
 ];
 
 const Campaigns = () => {
