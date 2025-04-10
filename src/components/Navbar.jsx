@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white px-4 py-3 shadow-md">
+    <nav className="bg-yellow-500 text-white px-4 py-3 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap">
         {/* Logo / Brand */}
       { /*<div className="text-lg font-bold text-sky-400">The World Saver</div>*/}
@@ -30,14 +30,14 @@ const Navbar = () => {
           } w-full md:flex md:items-center md:justify-end md:w-auto`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-4 text-sm text-center md:text-left mt-4 md:mt-0">
-            <li className="hover:text-orange-400 cursor-pointer">Home</li>
-            <li className="hover:text-orange-400 cursor-pointer">About Us</li>
-            <li className="hover:text-orange-400 cursor-pointer">Projects</li>
-            <li className="hover:text-orange-400 cursor-pointer">Media</li>
-            <li className="hover:text-orange-400 cursor-pointer">Get Involved</li>
-            <li className="hover:text-orange-400 cursor-pointer">Download</li>
-            <li className="hover:text-orange-400 cursor-pointer">Centers</li>
-            <li className="hover:text-orange-400 cursor-pointer">Contact</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Home</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">About Us</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Projects</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Media</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Get Involved</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Download</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Centers</li>
+            <li className="hover:text-orange-400 cursor-pointer text-black">Contact</li>
           </ul>
 
           {/* Donate Button */}
@@ -47,11 +47,14 @@ const Navbar = () => {
                 Donate
               </button>*/}
 
-                <button className="border border-white px-4 py-2 rounded-lg mt-2 md:mt-0 text-white  transition duration-300 ease-in-out hover:bg-orange-400 hover:text-white">Donate</button>
+                <button className="border border-black px-4 py-2 rounded-lg mt-2 md:mt-0 text-black  transition duration-300 ease-in-out hover:bg-orange-400 hover:text-white">Donate</button>
 
             </Link>
+            
+            <Link href="/signin">
+           <button className="border border-black px-4 py-2 rounded-lg mt-2 md:mt-0 text-black  transition duration-300 ease-in-out hover:bg-orange-400 hover:text-white">Sign In</button>
+        </Link>
            
-            <button className="border border-white px-4 py-2 rounded-lg mt-2 md:mt-0 text-white  transition duration-300 ease-in-out hover:bg-orange-400 hover:text-white">Sign In</button>
            
           </div>
         </div>

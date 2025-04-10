@@ -14,14 +14,18 @@ export default function Home() {
       <Header />
       <Navbar /> 
       <Link href="/donation"> </Link>
+      <Link href="/signin" legacyBehavior>
+      <a>
+          <button className="signin-button"></button>
+        </a>
+      </Link>
+  
       <HeroSlider />
       <Mission /> 
       <Campaigns />
       <Donors />
       <SkillTrainingSection />
       <Footer />
-      
- 
 
     </div>
     
