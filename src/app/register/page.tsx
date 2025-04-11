@@ -4,7 +4,7 @@ const RegisterPage = () => {
   return (
     <div
       className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
-      style={{ backgroundImage: "url('register.jpg')"  }}
+      style={{ backgroundImage: "url('hero3.jpg')"  }}
     >
       <div className="bg-white shadow-md rounded-lg w-full max-w-md p-6 bg-opacity-90">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
