@@ -19,7 +19,7 @@ const VolunteerPage = () => {
       {/* Info Section */}
       <div className="mb-8 text-black text-center max-w-3xl mx-auto">
         <p>
-          Join our team of dedicated volunteers and help us make a difference in the world. Whether you're skilled in teaching, organizing events, or just want to lend a helping hand — we welcome you!
+          Join our team of dedicated volunteers and help us make a difference in the world. Whether you are skilled in teaching, organizing events, or just want to lend a helping hand — we welcome you!
         </p>
       </div>
 
