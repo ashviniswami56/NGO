@@ -16,7 +16,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-10">
+    <footer id="about" className="bg-black text-white pt-10">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Logo & About */}
         <div>
@@ -101,7 +101,7 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-bold mb-2">Follow us on</h3>
+          <h3 className="text-lg font-bold mb-2">Contact us</h3>
           <div className="mb-2 text-orange-500">● ● ● ● ● ●</div>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
@@ -120,7 +120,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="bg-gray-800 text-gray-300 text-sm mt-10 py-4 px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center gap-2">
-          <Info /> © 2023{" "}
+          <Info /> © 2025{" "}
           <span className="font-semibold text-white">The World Saver</span>
           All rights reserved.
         </div>
@@ -133,9 +133,6 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-1">
             <Undo2 /> Refund Policy
-          </div>
-          <div className="flex items-center gap-1">
-            <LayoutDashboard /> Sitemap
           </div>
         </div>
       </div>

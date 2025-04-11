@@ -30,14 +30,53 @@ const Navbar = () => {
           } w-full md:flex md:items-center md:justify-end md:w-auto`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-4 text-sm text-center md:text-left mt-4 md:mt-0">
-            <li className="hover:text-orange-400 cursor-pointer text-black">Home</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">About Us</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">Projects</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">Media</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">Get Involved</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">Download</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">Centers</li>
-            <li className="hover:text-orange-400 cursor-pointer text-black">Contact</li>
+            
+            <li>
+               <Link href="/#Header" className="hover:text-orange-400 cursor-pointer text-black">
+                 Home
+                </Link>
+            </li>
+
+
+            
+            <li>
+               <Link href="/#about" className="hover:text-orange-400 cursor-pointer text-black">
+                 About Us
+              </Link>
+            </li>
+
+
+            <li>
+               <Link href="/#projects" className="hover:text-orange-400 cursor-pointer text-black">
+                  Projects
+                </Link>
+            </li>
+
+
+
+            <li>
+               <Link href="/#mission" className="hover:text-orange-400 cursor-pointer text-black">
+                     Mission
+               </Link>
+            </li>
+
+
+
+            <li>
+               <Link href="/#donors" className="hover:text-orange-400 cursor-pointer text-black">
+                   Get Involved
+               </Link>
+            </li>
+
+
+
+            <li>
+              <Link href="/volunteer" className="hover:text-orange-400 cursor-pointer text-black">
+                  Volunteer
+             </Link>
+            </li>
+
+        
           </ul>
 
           {/* Donate Button */}

@@ -1,16 +1,17 @@
 // app/donation/page.jsx
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 const DonatePage = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col md:flex-row items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-sky-100 flex flex-col md:flex-row items-center justify-center px-4 py-12">
       {/* Left Section */}
-      <div className="md:w-1/2 space-y-4 max-w-xl">
+      <div className="md:w-1/2 space-y-2 max-w-xl">
         <Image
           src="/donations.jpg"
           alt="Donation"
-          width={600}
+          width={500}
           height={300}
           className="rounded shadow"
         />
@@ -40,7 +41,16 @@ const DonatePage = () => {
           </button>
         </form>
       </div>
-    </div>
+
+      <div className="absolute top-4 right-4 z-50">
+      <Link href="/#Header">
+        <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm md:text-base transition-all duration-200 shadow-lg">
+           ⬅ Back to Homepage
+        </button>
+      </Link>
+      </div>
+
+  </div>
   );
 };
 

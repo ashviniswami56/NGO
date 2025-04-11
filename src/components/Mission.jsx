@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Mission = () => {
   return (
-    <section className="bg-white py-14 px-4 md:px-10">
+    <section id="mission" className="bg-white py-14 px-4 md:px-10">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10">
         {/* Image on left */}
         <div className="w-full lg:w-1/2">

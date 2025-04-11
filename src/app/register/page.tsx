@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const RegisterPage = () => {
   return (
     <div
@@ -13,12 +15,19 @@ const RegisterPage = () => {
           <input type="email" placeholder="Email" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-black" />
           <input type="password" placeholder="Password" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-black" />
           <input type="password" placeholder="Confirm Password" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-black" />
-          <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Register</button>
+          <button type="submit" className="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition">Register</button>
         </form>
         <p className="text-sm text-center text-gray-600 mt-4">
           Already have an account?{" "}
           <a href="/signin" className="text-blue-600 hover:underline">Login</a>
         </p>
+      </div>
+      <div className="absolute top-4 right-4 z-50">
+      <Link href="/#Header">
+        <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm md:text-base transition-all duration-200 shadow-lg">
+           ⬅ Back to Homepage
+        </button>
+      </Link>
       </div>
     </div>
   );

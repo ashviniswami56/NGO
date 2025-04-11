@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SkillTrainingSection = () => {
   return (
-    <section className="py-12 px-4 md:px-16 bg-white">
+    <section id="projects" className="py-12 px-4 md:px-16 bg-white">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
         {/* Left: Image */}
         <div className="w-full lg:w-1/2">

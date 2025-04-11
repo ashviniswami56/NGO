@@ -12,7 +12,7 @@ const HeroSlider = ({ backgroundImage }: HeroSliderProps) => {
     '/hero2.jpg',
     '/hero3.jpg',
     '/hero4.jpg',
-    '/hero5.jpg'
+    '/hero5.jpg',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -20,7 +20,7 @@ const HeroSlider = ({ backgroundImage }: HeroSliderProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 7000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -29,8 +29,10 @@ const HeroSlider = ({ backgroundImage }: HeroSliderProps) => {
 
   return (
     <div
+      id="hero"
       className="relative mx-[15px] h-[400px] md:h-[400px] lg:h-[500px] bg-cover bg-center flex items-center transition-all duration-1000"
-      style={{ backgroundImage: `url('${currentBackground}')` }}>
+      style={{ backgroundImage: `url('${currentBackground}')` }} // ✅ fixed here
+    >
     </div>
   );
 };

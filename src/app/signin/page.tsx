@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const SignInPage = () => {
   return (
     <div
@@ -21,7 +23,7 @@ const SignInPage = () => {
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+            className="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 transition"
           >
             Login
           </button>
@@ -32,6 +34,14 @@ const SignInPage = () => {
             Register here
           </a>
         </p>
+      </div>
+
+      <div className="absolute top-4 right-4 z-50">
+      <Link href="/#Header">
+        <button className="bg-orange-600 hover:bg-Orange-700 text-white px-4 py-2 rounded-md text-sm md:text-base transition-all duration-200 shadow-lg">
+           ⬅ Back to Homepage
+        </button>
+      </Link>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import { Mail, Phone } from "lucide-react";
 
 const Header = () => (
-  <header className="bg-gradient-to-r bg-white text-white px-6 py-4 shadow-md">
+  <header className="bg-gradient-to-r bg-sky-100 text-white px-6 py-4 shadow-md">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
       {/* Logo and Title */}
       <div className="flex items-center gap-3 mb-3 md:mb-0">
