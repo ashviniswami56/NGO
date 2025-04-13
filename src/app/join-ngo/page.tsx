@@ -10,16 +10,14 @@ const JoinNgoPage = () => {
     whyJoin: '',
   });
 
-  const handleChange = (event : any) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
   
-  const handleSubmit = (event : any) => {
-    event.preventDefault();
+  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     console.log('Submitted Data:', formData);
     alert('Form submitted successfully!');
   };

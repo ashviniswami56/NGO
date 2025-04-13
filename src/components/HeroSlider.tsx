@@ -36,7 +36,7 @@ const HeroSlider = () => {
       clearInterval(quoteInterval);
       clearInterval(sliderInterval);
     };
-  }, []);
+  }, [quotes.length, sliderImages.length]);
 
   return (
     <div
