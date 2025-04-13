@@ -1,19 +1,10 @@
-
 import { Mail, Phone } from "lucide-react";
 
 const Header = () => (
-  <header className="bg-gradient-to-r bg-sky-100 text-white px-6 py-4 shadow-md">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-      {/* Logo and Title */}
-      <div className="flex items-center gap-3 mb-3 md:mb-0">
-        <img src="/logo.png" alt="Nitya Logo" className="h-12 w-12 rounded-full shadow-lg" />
-        <h1 className="text-3xl font-extrabold text-orange-500 tracking-wide">
-          The World Saver
-        </h1>
-      </div>
-
+  <header className="bg-gray-100 text-white px-6 py-2 shadow-md h-12">
+    <div className="max-w-7xl mx-auto flex justify-end items-center h-full">
       {/* Contact Info */}
-      <div className="text-sm md:text-base flex flex-col md:flex-row items-center gap-2 md:gap-6 text-gray-300">
+      <div className="text-sm md:text-base flex items-center gap-6 text-gray-700">
         <div className="flex items-center gap-1">
           <Mail className="w-4 h-4 text-black" />
           <span className="text-black">info@theworldsaverngo.org</span>

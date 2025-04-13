@@ -11,7 +11,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div>
-      <Header />
+     
+     <Header />
       <Navbar /> 
       <Link href="/donation"> </Link>
       <Link href="/signin" legacyBehavior>
@@ -19,7 +20,6 @@ export default function Home() {
           <button className="signin-button"></button>
         </a>
       </Link>
-  
       <HeroSlider />
       <Mission /> 
       <Campaigns />

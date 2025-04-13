@@ -12,6 +12,7 @@ const SkillTrainingSection = () => {
               alt="Skill Training Project"
               width={600}
               height={400}
+              quality={100}
               className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>

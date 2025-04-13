@@ -118,25 +118,34 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-gray-800 text-gray-300 text-sm mt-10 py-4 px-4 flex flex-col md:flex-row items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Info /> © 2025{" "}
-          <span className="font-semibold text-white">The World Saver</span>
-          All rights reserved.
-        </div>
-        <div className="flex flex-wrap gap-6 mt-2 md:mt-0">
-          <div className="flex items-center gap-1">
-            <Info /> Privacy Policy
-          </div>
-          <div className="flex items-center gap-1">
-            <FileText /> Terms & Condition
-          </div>
-          <div className="flex items-center gap-1">
-            <Undo2 /> Refund Policy
-          </div>
-        </div>
+<div className="bg-gray-800 text-gray-300 text-sm mt-10 py-4 px-4">
+  <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    
+    {/* Left Side */}
+    <div className="flex flex-col md:flex-row items-center gap-2 text-center md:text-left">
+    
+      <span className="font-semibold text-white">The World Saver</span>
+      <span>All rights reserved.</span>
+    </div>
+
+    {/* Right Side */}
+    <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 text-center">
+      <div className="flex items-center gap-1">
+        <Info className="w-4 h-4" />
+        <span>Privacy Policy</span>
       </div>
-    </footer>
+      <div className="flex items-center gap-1">
+        <FileText className="w-4 h-4" />
+        <span>Terms & Conditions</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <Undo2 className="w-4 h-4" />
+        <span>Refund Policy</span>
+      </div>
+    </div>
+  </div>
+  </div>
+ </footer>
   );
 };
 

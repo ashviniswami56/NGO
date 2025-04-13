@@ -1,6 +1,7 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const campaigns = [
   { src: "/skills.jpeg", label: "Skills Training", bg: "from-teal-500 to-green-400" },
@@ -14,13 +15,86 @@ const campaigns = [
 ];
 
 const Campaigns = () => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="bg-neutral-50 py-16 px-4 md:px-10">
-      <div className="text-center mb-14">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800">Make the World Happier</h2>
-        <p className="text-base md:text-lg text-purple-600 mt-3 uppercase tracking-wide font-semibold">Join Our Campaigns</p>
+      <div className="text-center mb-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800">
+          Make the World Happier
+        </h2>
+        <p
+          onClick={() => {
+            setShowForm((prev) => !prev);
+            setTimeout(() => {
+              document.getElementById("join-form")?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+          }}
+          className="text-base md:text-lg text-purple-600 mt-3 uppercase tracking-wide font-semibold cursor-pointer hover:underline"
+        >
+          {showForm ? "Hide Join Form" : "Join Our Campaigns"}
+        </p>
       </div>
 
+      {/* Join Form */}
+      <AnimatePresence>
+        {showForm && (
+          <motion.div
+            id="join-form"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto mb-12 bg-white p-6 rounded-2xl shadow-lg"
+          >
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Join a Campaign</h2>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+                required
+              />
+              <select
+                className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+                required
+              >
+                <option value="">Select a Campaign</option>
+                {campaigns.map((item, idx) => (
+                  <option key={idx} value={item.label}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+              <textarea
+                placeholder="Why do you want to join?"
+                rows={4}
+                className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-black md:col-span-2"
+              ></textarea>
+              <button
+                type="submit"
+                className="md:col-span-2 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition"
+              >
+                Submit
+              </button>
+            </form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Campaign Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {campaigns.map((item, idx) => (
           <motion.div
@@ -37,6 +111,7 @@ const Campaigns = () => {
               alt={item.label}
               width={400}
               height={300}
+              quality={100}
               className="w-full h-64 object-cover group-hover:brightness-75 transition-all duration-300"
             />
             <div
@@ -52,6 +127,7 @@ const Campaigns = () => {
 };
 
 export default Campaigns;
+
 
 
 
