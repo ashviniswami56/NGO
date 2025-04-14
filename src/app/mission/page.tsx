@@ -3,12 +3,46 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer"; // Adjust path as needed
+import Footer from "@/components/Footer";
+
+interface StepProps {
+  title: string;
+  text: string;
+  image: string;
+  reverse?: boolean;
+}
+
+const Step = ({ title, text, image, reverse }: StepProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className={`flex flex-col md:flex-row items-center gap-10 ${
+        reverse ? "md:flex-row-reverse" : ""
+      }`}
+    >
+      <div className="md:w-1/2">
+        <Image
+          src={image}
+          alt={title}
+          width={600}
+          height={400}
+          className="rounded-2xl shadow-md w-full object-cover"
+        />
+      </div>
+      <div className="md:w-1/2 space-y-4">
+        <h2 className="text-3xl font-bold text-orange-500">{title}</h2>
+        <p className="text-lg">{text}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const MissionPage = () => {
   return (
     <div className="bg-white text-gray-800">
-      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
@@ -39,7 +73,6 @@ const MissionPage = () => {
           title="How We Started"
           text="Our journey began with a group of passionate individuals who believed that change starts with compassion. We saw the growing struggles of children on the streets and felt compelled to take action."
           image="/mstart.png"
-          reverse={false}
         />
 
         <Step
@@ -53,7 +86,6 @@ const MissionPage = () => {
           title="Our Goal"
           text="To ensure that every street child has access to nutritious food, a safe shelter, quality education, and the chance to lead a dignified life."
           image="/mgoal.jpg"
-          reverse={false}
         />
 
         <Step
@@ -64,39 +96,9 @@ const MissionPage = () => {
         />
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
 };
 
 export default MissionPage;
-
-// Step Component
-const Step = ({ title, text, image, reverse }: any) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className={`flex flex-col md:flex-row items-center gap-10 ${
-        reverse ? "md:flex-row-reverse" : ""
-      }`}
-    >
-      <div className="md:w-1/2">
-        <Image
-          src={image}
-          alt={title}
-          width={600}
-          height={400}
-          className="rounded-2xl shadow-md w-full object-cover"
-        />
-      </div>
-      <div className="md:w-1/2 space-y-4">
-        <h2 className="text-3xl font-bold text-orange-500">{title}</h2>
-        <p className="text-lg">{text}</p>
-      </div>
-    </motion.div>
-  );
-};
