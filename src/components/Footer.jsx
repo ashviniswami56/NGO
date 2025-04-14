@@ -56,19 +56,19 @@ const Footer = () => {
           <div className="mb-2 text-orange-500">● ● ● ● ● ●</div>
           <ul className="space-y-1 text-sm">
             <li className="flex items-center gap-2">
-              <CircleDot /> Bihar
+              <CircleDot /> Pune
+            </li>
+            <li className="flex items-center gap-2">
+              <CircleDot /> Mumbai
+            </li>
+            <li className="flex items-center gap-2">
+              <CircleDot /> Hyderabad
+            </li>
+            <li className="flex items-center gap-2">
+              <CircleDot /> Banglore
             </li>
             <li className="flex items-center gap-2">
               <CircleDot /> Delhi
-            </li>
-            <li className="flex items-center gap-2">
-              <CircleDot /> Jharkhand
-            </li>
-            <li className="flex items-center gap-2">
-              <CircleDot /> Maharashtra
-            </li>
-            <li className="flex items-center gap-2">
-              <CircleDot /> Uttar Pradesh
             </li>
           </ul>
         </div>

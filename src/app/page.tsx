@@ -14,6 +14,7 @@ export default function Home() {
      
      <Header />
       <Navbar /> 
+      <Link href="/about"> </Link>
       <Link href="/donation"> </Link>
       <Link href="/signin" legacyBehavior>
       <a>

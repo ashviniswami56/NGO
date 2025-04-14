@@ -1,11 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const SkillTrainingSection = () => {
   return (
     <section id="projects" className="py-12 px-4 md:px-16 bg-white">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
-        {/* Left: Image */}
-        <div className="w-full lg:w-1/2">
+        {/* Left: Image with animation */}
+        <motion.div
+          className="w-full lg:w-1/2"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="overflow-hidden rounded-xl shadow-md">
             <Image
               src="/hero5.jpg"
@@ -16,10 +25,16 @@ const SkillTrainingSection = () => {
               className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right: Text */}
-        <div className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-xl shadow-lg">
+        {/* Right: Text with animation */}
+        <motion.div
+          className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-xl shadow-lg"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span className="text-orange-400 text-3xl">🧡</span>
             Projects For Skill Training
@@ -33,13 +48,12 @@ const SkillTrainingSection = () => {
             According to recent data, just 10% of recent graduates are employable, and the
             other 90% do not possess the necessary abilities to qualify for employment by
             a firm. The GDP of India is increasing at a healthy rate of about 6–8%, but
-            employment growth is not keeping up.  Support by Donate to NGO or Donate to Poor.
+            employment growth is not keeping up. Support by Donate to NGO or Donate to Poor.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default SkillTrainingSection;
-

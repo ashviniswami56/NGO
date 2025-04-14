@@ -23,7 +23,7 @@ const RegisterPage = () => {
         </p>
       </div>
       <div className="absolute top-4 right-4 z-50">
-      <Link href="/#Header">
+      <Link href="/#Navbar">
         <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm md:text-base transition-all duration-200 shadow-lg">
            ⬅ Back to Homepage
         </button>
