@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo + Title */}
         <div className="flex items-center gap-3">
-          <img src="/image/logo.png" alt="Logo" className="h-10 w-10 rounded-full shadow-lg object-cover" />
+          <img src="/public/image/logo.png" alt="Logo" className="h-10 w-10 rounded-full shadow-lg object-cover" />
           <h1 className="text-lg md:text-2xl font-extrabold text-orange-600 tracking-wide">
             The World Saver
           </h1>
