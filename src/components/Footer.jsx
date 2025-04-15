@@ -102,7 +102,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Left Side */}
           <div className="text-center sm:text-left flex flex-col sm:flex-row items-center gap-1">
-            <span className="font-semibold text-white">The World Saver</span>
+            <span className="font-semibold text-orange-600">The World Saver</span>
             <span>© {new Date().getFullYear()} All rights reserved.</span>
           </div>
 
