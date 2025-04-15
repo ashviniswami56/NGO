@@ -62,7 +62,14 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ title, description, image, index }: any) => (
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  index: number;
+}
+
+const ProjectCard = ({ title, description, image, index }: ProjectCardProps) =>(
   <motion.div
     key={index}
     className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-[1.02] transition-transform duration-500"
