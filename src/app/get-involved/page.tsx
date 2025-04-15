@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -10,36 +9,36 @@ const involvementData = [
   {
     title: "Volunteer With Us",
     text: "Become a changemaker by dedicating your time to make a real difference. Volunteers help us on the ground and with outreach programs.",
-    image: "/team2.jpg",
+    image: "/images/team2.jpg",
   },
   {
     title: "Join As An NGO Partner",
     text: "Collaborate with us as a partner NGO and amplify the impact in underserved communities together.",
-    image: "/joinngo.jpg",
+    image: "/images/joinngo.jpg",
   },
   {
     title: "Corporate Partnerships",
     text: "Your organization can support CSR goals by partnering with us in impactful projects, employee engagement, and sponsorships.",
-    image: "/corporate.jpg",
+    image: "/images/corporate.jpg",
   },
   {
     title: "Individual Membership",
     text: "Join our family as a member and become a long-term supporter of various initiatives that uplift communities.",
-    image: "/individual.jpg",
+    image: "/images/individual.jpg",
   },
   {
     title: "Career Opportunities",
     text: "Explore meaningful career roles where passion meets purpose. Join our dynamic and mission-driven team.",
-    image: "/career.jpg",
+    image: "/images/career.jpg",
   },
   {
     title: "Internships for Students",
     text: "Intern with us to gain hands-on experience in social work, NGO management, outreach, and more.",
-    image: "/internship.jpg",
+    image: "/images/internship.jpg",
   },
 ];
 
-const GetInvolvedPage = () => {
+export default function GetInvolvedPage() {
   return (
     <div className="bg-white text-gray-800">
       <Navbar />
@@ -47,7 +46,7 @@ const GetInvolvedPage = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full">
         <Image
-          src="/getinvolved.jpg"
+          src="/images/getinvolved.jpg"
           alt="Get Involved"
           fill
           quality={100}
@@ -65,14 +64,12 @@ const GetInvolvedPage = () => {
         </div>
       </section>
 
-      {/* Step-by-step Involvement Info */}
+      {/* Involvement Sections */}
       <section className="max-w-6xl mx-auto px-4 py-16 space-y-24">
         {involvementData.map((section, index) => (
           <InvolvementStep
             key={index}
-            title={section.title}
-            text={section.text}
-            image={section.image}
+            {...section}
             reverse={index % 2 !== 0}
           />
         ))}
@@ -81,11 +78,9 @@ const GetInvolvedPage = () => {
       <Footer />
     </div>
   );
-};
+}
 
-export default GetInvolvedPage;
-
-const InvolvementStep = ({
+function InvolvementStep({
   title,
   text,
   image,
@@ -95,28 +90,30 @@ const InvolvementStep = ({
   text: string;
   image: string;
   reverse: boolean;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 60 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className={`flex flex-col md:flex-row items-center gap-10 ${
-      reverse ? "md:flex-row-reverse" : ""
-    }`}
-  >
-    <div className="md:w-1/2">
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className={`flex flex-col md:flex-row items-center gap-10 ${
+        reverse ? "md:flex-row-reverse" : ""
+      }`}
+    >
       <Image
         src={image}
         alt={title}
         width={600}
         height={400}
-        className="rounded-2xl shadow-lg object-cover w-full"
+        className="rounded-2xl shadow-lg object-cover w-full md:w-1/2"
       />
-    </div>
-    <div className="md:w-1/2 space-y-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-orange-500">{title}</h2>
-      <p className="text-lg leading-relaxed">{text}</p>
-    </div>
-  </motion.div>
-);
+      <div className="md:w-1/2 space-y-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-orange-500">
+          {title}
+        </h2>
+        <p className="text-lg leading-relaxed">{text}</p>
+      </div>
+    </motion.div>
+  );
+}

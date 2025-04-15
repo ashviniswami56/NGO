@@ -17,7 +17,7 @@ const SkillTrainingSection = () => {
         >
           <div className="overflow-hidden rounded-xl shadow-md">
             <Image
-              src="/hero5.jpg"
+              src="/images/hero5.jpg"
               alt="Skill Training Project"
               width={600}
               height={400}

@@ -1,91 +1,80 @@
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
+"use client";
+
+import { useState, useMemo } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const JoinNgoPage = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    whyJoin: '',
+    fullName: "",
+    email: "",
+    phone: "",
+    whyJoin: "",
   });
 
+  const fields = useMemo(() => [
+    { name: "fullName", placeholder: "Full Name", type: "text" },
+    { name: "email", placeholder: "Email Address", type: "email" },
+    { name: "phone", placeholder: "Phone Number", type: "tel" },
+  ], []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
-  
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Submitted Data:', formData);
-    alert('Form submitted successfully!');
+    console.log("Submitted Data:", formData);
+    alert("Form submitted successfully!");
   };
-  
+
   return (
-    <section className="min-h-screen bg-orange-50 py-10 px-4">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
-        <h2 className="text-4xl font-extrabold text-center text-orange-600 mb-6">
-          Join Our NGO
-        </h2>
+    <div className="bg-orange-50 min-h-screen flex flex-col">
+      <Navbar />
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
-          <input
-            type="text"
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500 text-black"
-          />
+      {/* Space between Navbar and form */}
+      <main className="flex-grow relative bg-[url('/images/hero3.jpg')] bg-cover bg-center py-20 px-4">
+        <div className="max-w-3xl mx-auto bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border-t-4 border-orange-400">
+          <h2 className="text-4xl font-extrabold text-center text-orange-600 mb-8 drop-shadow-sm">
+            Join Our NGO
+          </h2>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500 text-black"
-          />
+          <form onSubmit={handleSubmit} className="grid gap-6">
+            {fields.map(({ name, placeholder, type }) => (
+              <input
+                key={name}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                value={formData[name as keyof typeof formData]}
+                onChange={handleChange}
+                required
+                className="p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400 text-black"
+              />
+            ))}
 
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500 text-black"
-          />
+            <textarea
+              name="whyJoin"
+              placeholder="Why do you want to join?"
+              value={formData.whyJoin}
+              onChange={handleChange}
+              rows={4}
+              required
+              className="p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400 text-black"
+            />
 
-          <textarea
-            name="whyJoin"
-            placeholder="Why do you want to join?"
-            value={formData.whyJoin}
-            onChange={handleChange}
-            rows={4}
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black-500 text-black"
-          ></textarea>
+            <button
+              type="submit"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl shadow-md hover:shadow-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
+            >
+              Submit Application
+            </button>
+          </form>
+        </div>
+      </main>
 
-          <button
-            type="submit"
-            className="bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition"
-          >
-            Submit
-          </button>
-        </form>
-
-        <div className="absolute top-4 right-4 z-50">
-      <Link href="/#Header">
-        <button className="bg-orange-600 hover:bg-Orange-700 text-white px-4 py-2 rounded-md text-sm md:text-base transition-all duration-200 shadow-lg">
-           ⬅ Back to Homepage
-        </button>
-      </Link>
-      </div>
-      </div>
-    </section>
+      <Footer />
+    </div>
   );
 };
 

@@ -29,7 +29,7 @@ const Mission = () => {
           >
             <div className="rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/hero1.jpg"
+                src="/images/hero1.jpg"
                 alt="Mission"
                 width={600}
                 height={400}

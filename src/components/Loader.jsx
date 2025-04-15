@@ -1,15 +1,14 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image"; 
+import Image from "next/image";
 
 const Loader = () => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, 30000); 
+    const timer = setTimeout(() => setShow(false), 3000); // Set shorter timeout for faster loader disappear
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,20 +22,9 @@ const Loader = () => {
       animate={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
-      {/* Display logo and name */}
-      <div className="flex flex-col items-center">
-        <Image
-          src="/logo.png" // Replace with the path to your logo image
-          alt="Website Logo"
-          width={120}
-          height={120}
-          className="mb-4"
-        />
-        <h1 className="text-3xl text-orange-500 font-bold">The World Saver</h1>
-      </div>
-      <p className="mt-4 text-orange-500 text-lg font-semibold">
-        Loading...
-      </p>
+      <Image src="/images/logo.png" alt="Logo" width={120} height={120} className="mb-4" />
+      <h1 className="text-3xl text-orange-500 font-bold">The World Saver</h1>
+      <p className="mt-4 text-orange-500 text-lg font-semibold">Loading...</p>
     </motion.div>
   );
 };
