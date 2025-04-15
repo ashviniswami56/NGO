@@ -1,19 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close mobile dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <nav className="bg-white text-black shadow-md px-4 py-3 fixed top-0 w-full z-50">
+    <nav className="bg-white text-black shadow-md px-4 py-4 fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo + Title */}
         <div className="flex items-center gap-3">
-          <img src="/images/logo.png" alt="Logo" className="h-12 w-12 rounded-full shadow-lg" />
-          <h1 className="text-2xl font-extrabold text-orange-600 tracking-wide">The World Saver</h1>
+          <img src="/image/logo.png" alt="Logo" className="h-10 w-10 rounded-full shadow-lg object-cover" />
+          <h1 className="text-lg md:text-2xl font-extrabold text-orange-600 tracking-wide">
+            The World Saver
+          </h1>
         </div>
 
         {/* Hamburger Button */}
@@ -32,7 +46,10 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg px-6 py-4 space-y-4 font-semibold text-center animate-slideDown">
+        <div
+          ref={dropdownRef}
+          className="md:hidden mt-4 bg-white rounded-lg shadow-lg px-6 py-4 space-y-4 font-semibold text-center animate-slideDown"
+        >
           <MobileLink href="/#Header" onClick={() => setIsOpen(false)}>Home</MobileLink>
           <MobileLink href="/about" onClick={() => setIsOpen(false)}>About Us</MobileLink>
           <MobileLink href="/projects" onClick={() => setIsOpen(false)}>Projects</MobileLink>
@@ -50,7 +67,7 @@ const Navbar = () => {
 };
 
 const NavLinks = () => (
-  <ul className="flex space-x-6 text-sm">
+  <ul className="flex space-x-4 md:space-x-6 text-sm md:text-base">
     <NavItem href="/#Header">Home</NavItem>
     <NavItem href="/about">About Us</NavItem>
     <NavItem href="/projects">Projects</NavItem>
@@ -62,12 +79,14 @@ const NavLinks = () => (
 
 const NavItem = ({ href, children }) => (
   <li>
-    <Link href={href} className="hover:text-orange-400">{children}</Link>
+    <Link href={href} className="hover:text-orange-500 transition">
+      {children}
+    </Link>
   </li>
 );
 
 const ActionButtons = () => (
-  <div className="flex gap-4">
+  <div className="flex gap-3">
     <ActionButton href="/donation">Donate</ActionButton>
     <ActionButton href="/signin">Sign In</ActionButton>
   </div>
@@ -75,7 +94,7 @@ const ActionButtons = () => (
 
 const ActionButton = ({ href, children }) => (
   <Link href={href}>
-    <button className="border border-black px-4 py-2 rounded-lg text-black hover:bg-orange-400 hover:text-white">
+    <button className="border border-black px-4 py-1.5 rounded-lg text-sm text-black hover:bg-orange-400 hover:text-white transition">
       {children}
     </button>
   </Link>
