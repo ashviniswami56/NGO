@@ -51,7 +51,7 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Image src="/image/logo.png" alt="Logo" width={50} height={50} />
-            <h2 className="text-xl font-bold text-sky-500">The World Saver Foundation</h2>
+            <h2 className="text-xl font-bold text-orange-600">The World Saver Foundation</h2>
           </div>
           <p className="text-sm text-gray-300 mb-4">
             The World Saver Foundation was established on the 25th of April 2020 under the Societies Registration Act 1960. It is a National-level society having 80G & 12A.
@@ -102,7 +102,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Left Side */}
           <div className="text-center sm:text-left flex flex-col sm:flex-row items-center gap-1">
-            <span className="font-semibold text-orange-600">The World Saver</span>
+            <span className="font-semibold text-white">The World Saver</span>
             <span>© {new Date().getFullYear()} All rights reserved.</span>
           </div>
 
