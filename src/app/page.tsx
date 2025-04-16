@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import Mission from "@/components/Mission";
