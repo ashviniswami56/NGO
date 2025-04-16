@@ -14,7 +14,7 @@ export default function Home() {
       <Link href="/about"> </Link>
       <Link href="/donation"> </Link>
       <Link href="/signin" legacyBehavior>
-      <a>
+        <a>
           <button className="signin-button"></button>
         </a>
       </Link>
@@ -24,8 +24,6 @@ export default function Home() {
       <Donors />
       <SkillTrainingSection />
       <Footer />
-
     </div>
-    
   );
 }
