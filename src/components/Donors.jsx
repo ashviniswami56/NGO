@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 // Donor data
 const donors = [
-  { src: "/images/maef.png", alt: "MAEF" },
+  { src: "/images/maef.jpg", alt: "MAEF" },
   { src: "/images/textiles.jpg", alt: "Ministry of Textiles" },
-  { src: "/images/delhi.png", alt: "Delhi Govt" },
-  { src: "/images/bhagwati.png", alt: "Bhagwati" },
-  { src: "/images/tdi.png", alt: "TDI" },
+  { src: "/images/delhi.jpg", alt: "Delhi Govt" },
+  { src: "/images/bhagwati.jpg", alt: "Bhagwati" },
+  { src: "/images/tdi.jpg", alt: "TDI" },
 ];
 
 // Reusable donor card component with animation

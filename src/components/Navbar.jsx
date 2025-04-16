@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo + Title */}
         <div className="flex items-center gap-3">
-          <img src="/public/image/logo.png" alt="Logo" className="h-10 w-10 rounded-full shadow-lg object-cover" />
+          <img src="/images/logo.jpg" alt="Logo" className="h-10 w-10 rounded-full shadow-lg object-cover" />
           <h1 className="text-lg md:text-2xl font-extrabold text-orange-600 tracking-wide">
             The World Saver
           </h1>
@@ -46,20 +46,35 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div
-          ref={dropdownRef}
-          className="md:hidden mt-4 bg-white rounded-lg shadow-lg px-6 py-4 space-y-4 font-semibold text-center animate-slideDown"
-        >
-          <MobileLink href="/#Header" onClick={() => setIsOpen(false)}>Home</MobileLink>
+  <div
+    ref={dropdownRef}
+    className="absolute top-full right-0 w-2/3 max-w-xs bg-white/40 backdrop-blur-md border border-white/30 rounded-xl shadow-lg px-4 py-6 space-y-4 font-semibold text-center z-50 animate-slide-in"
+  >
+          <MobileLink href="/#Navbar" onClick={() => setIsOpen(false)}>Home</MobileLink>
           <MobileLink href="/about" onClick={() => setIsOpen(false)}>About Us</MobileLink>
           <MobileLink href="/projects" onClick={() => setIsOpen(false)}>Projects</MobileLink>
           <MobileLink href="/mission" onClick={() => setIsOpen(false)}>Mission</MobileLink>
           <MobileLink href="/get-involved" onClick={() => setIsOpen(false)}>Get Involved</MobileLink>
           <MobileLink href="/volunteer" onClick={() => setIsOpen(false)}>Volunteer</MobileLink>
-          <div className="flex flex-col gap-3 mt-4">
-            <MobileLink href="/donation" onClick={() => setIsOpen(false)}>Donate</MobileLink>
-            <MobileLink href="/signin" onClick={() => setIsOpen(false)}>Sign In</MobileLink>
-          </div>
+          <div className="flex flex-col gap-3 mt-4 border-t border-white/20">
+    
+    
+    <MobileButton
+    href="/donation"
+    onClick={() => setIsOpen(false)}
+    className="bg-orange-500 hover:bg-green-600 text-white"
+  >
+    Donate
+  </MobileButton>
+  <MobileButton
+    href="/signin"
+    onClick={() => setIsOpen(false)}
+    className="bg-orange-500 text-white border border-gray-300 hover:bg-green-600"
+  >
+    Sign In
+  </MobileButton>
+</div>
+
         </div>
       )}
     </nav>
@@ -68,7 +83,7 @@ const Navbar = () => {
 
 const NavLinks = () => (
   <ul className="flex space-x-4 md:space-x-6 text-sm md:text-base">
-    <NavItem href="/#Header">Home</NavItem>
+    <NavItem href="/#Navbar">Home</NavItem>
     <NavItem href="/about">About Us</NavItem>
     <NavItem href="/projects">Projects</NavItem>
     <NavItem href="/mission">Mission</NavItem>
@@ -105,5 +120,15 @@ const MobileLink = ({ href, children, onClick }) => (
     {children}
   </Link>
 );
+const MobileButton = ({ href, children, onClick, className }) => (
+  <Link href={href} onClick={onClick}>
+    <button
+      className={`w-full py-2 rounded-lg font-semibold transition duration-300 ${className}`}
+    >
+      {children}
+    </button>
+  </Link>
+);
+
 
 export default Navbar;

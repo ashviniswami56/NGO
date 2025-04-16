@@ -9,7 +9,7 @@ const missionSteps = [
   {
     title: "How We Started",
     text: "Our journey began with a group of passionate individuals who believed that change starts with compassion. We saw the growing struggles of children on the streets and felt compelled to take action.",
-    image: "/images/mstart.png",
+    image: "/images/mstart.jpg",
   },
   {
     title: "Why We Exist",

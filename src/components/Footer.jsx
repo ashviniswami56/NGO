@@ -50,7 +50,7 @@ const Footer = () => {
         {/* Logo + About */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <Image src="/image/logo.png" alt="Logo" width={50} height={50} />
+            <Image src="/images/logo.jpg" alt="Logo" width={50} height={50} />
             <h2 className="text-xl font-bold text-orange-600">The World Saver Foundation</h2>
           </div>
           <p className="text-sm text-gray-300 mb-4">

@@ -25,12 +25,12 @@ const HeroSlider = () => {
   return (
     <div
       id="hero"
-      className="relative w-full max-w-screen overflow-x-hidden min-h-screen bg-gray-900 bg-opacity-90 transition-all duration-1000"
+      className="relative w-full overflow-x-hidden min-h-screen bg-gray-900 bg-opacity-90 transition-all duration-1000"
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gray-200 bg-opacity-40 z-10" />
 
-      <div className="relative z-20 h-full flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-8 md:gap-8 gap-4 max-w-screen overflow-hidden">
+      <div className="relative z-20 h-full mt-25 flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-8 md:gap-8 gap-4 max-w-screen overflow-hidden">
         {/* Left Section */}
         <motion.div
           className="w-full md:w-1/2 flex flex-col items-start justify-center space-y-6 text-white"
@@ -82,7 +82,7 @@ const HeroSlider = () => {
 
           {/* Mini Gallery */}
           <motion.div
-            className="flex flex-wrap "
+            className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -126,6 +126,7 @@ const HeroSlider = () => {
               alt="Slider"
               width={700}
               height={450}
+              quality={100}
               className="w-full h-full object-cover max-w-full transition-opacity duration-1000 ease-in-out"
             />
           </div>

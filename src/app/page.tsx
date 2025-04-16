@@ -11,8 +11,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div>
-     
-     <Header />
       <Navbar /> 
       <Link href="/about"> </Link>
       <Link href="/donation"> </Link>

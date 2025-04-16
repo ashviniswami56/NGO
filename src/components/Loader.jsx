@@ -22,7 +22,7 @@ const Loader = () => {
       animate={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
-      <Image src="/image/logo.png" alt="Logo" width={120} height={120} className="mb-4" />
+      <Image src="/images/logo.jpg" alt="Logo" width={120} height={120} className="mb-4" />
       <h1 className="text-3xl text-orange-500 font-bold">The World Saver</h1>
       <p className="mt-4 text-orange-500 text-lg font-semibold">Loading...</p>
     </motion.div>
